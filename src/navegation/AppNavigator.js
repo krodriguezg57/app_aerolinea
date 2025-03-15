@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { HomeScreen } from '../screens/HomeScreen';
 import { SplashScreen } from '../screens/SplashScreen';
 import { UserScreen } from '../screens/UserScreen';
+import { ReservasScreen } from '../screens/ReservasScreen';
+import { ticketScreen } from '../screens/ticketScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator()
@@ -13,6 +15,8 @@ const TabNavigator = () => {
     <Tab.Navigator initialRouteName='Home'>
       <Tab.Screen name="Home" component={HomeScreen} options={{}} />
       <Tab.Screen name="User" component={UserScreen} options={{}} />
+      <Tab.Screen name="Reserva" component={ReservasScreen} options={{}} />
+      <Tab.Screen name="Ticket" component={ticketScreen} options={{}} />
     </Tab.Navigator>
   )
 }
