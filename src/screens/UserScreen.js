@@ -1,12 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet} from 'react-native'
+import { FooterComponent } from './shared/FooterComponent'; 
 
 export const UserScreen = () => {
   return (
     <View style ={styles.container}>
         <Text>Hola UserScreen</Text>
+        <FooterComponent />
     </View>
-    
   )
 }
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import { View, Text, StyleSheet} from 'react-native'
+import { FooterComponent } from './shared/FooterComponent'; 
 
-export const ticketScreen = () => {
+export const TicketScreen = () => {
   return (
     <View style ={styles.container}>
         <Text>Hola ticketScreen</Text>
-    </View>
-    
+        <FooterComponent />
+    </View> 
   )
 }
 
