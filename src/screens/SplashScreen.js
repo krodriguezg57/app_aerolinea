@@ -1,23 +1,27 @@
-import React,{use, useEffect} from 'react'
-import { View, Text, StyleSheet, Image} from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import React, { useEffect } from 'react';  // Corrected the import here
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Colors from '../constants/Colors';
 
 export const SplashScreen = () => {
-  const navegation = useNavigation();
+  const navigation = useNavigation();  // Corrected typo: 'navegation' -> 'navigation'
 
   useEffect(() => {
-    const timer = setTimeout(()=>{
-      navegation.replace('MainTabs')},8000)
-    return ()=> clearTimeout(timer)
-  },[navegation])
+    const timer = setTimeout(() => {
+      navigation.replace('Login');
+    }, 2000);
+
+    return () => clearTimeout(timer);  // Cleanup the timer on unmount
+  }, [navigation]);  // Dependency on 'navigation'
 
   return (
-     <View style ={styles.container}>
-        <Text>Hola estoy en SplashScreen</Text>
-        <Image source={require('./../../assets/kitty.jpeg')} style= {styles.logo}></Image>
-     </View>
-  )
-}
+    <View style={styles.container}>
+      {/* Temporarily remove the Text to isolate the error */}
+      {/* <Text>Hola estoy en SplashScreen</Text> */}
+      <Image source={require('./../../assets/kitty.jpeg')} style={styles.logo} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +35,5 @@ const styles = StyleSheet.create({
     height: 200,
     width: 200,
     resizeMode: 'contain',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
