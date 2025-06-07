@@ -1,5 +1,6 @@
 export default {
     //fondo
+    
     color_principal:'#054d7a',
     variante_1: '#076cab',
     variante_2: '#23a5f6',

@@ -28,7 +28,7 @@ const LoginScreen = () => {
         console.log("Usuario logueado: ", userCredential.user);
         setError(false);
         setErrorMensaje('');
-        navigation.navigate('Home'); 
+        navigation.navigate('MainTabs'); 
       
       })
       .catch((error) => {
