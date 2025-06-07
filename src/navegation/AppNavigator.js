@@ -12,7 +12,11 @@ import { TicketScreen } from '../screens/TicketScreen';
 import  LoginScreen  from '../screens/auth/LoginScreen';
 import RegisterScreen from '../screens/auth/RegisterScreen'
 import SettingsScreen from '../screens/SettingsScreen';
-import PokemonInfo from '../screens/PokemonScreen';
+import PokemonInfo from '../screens/PikachuScreen';
+import SquirtleScreen from '../screens/SquirtleScreen';
+import PokemonFire from '../screens/PokemonAleatorioScreen';
+import RubyScreen from '../screens/CharizardScreen';
+import CharizardScreen from '../screens/CharizardScreen';
 
 
 
@@ -34,11 +38,10 @@ const TabNavigator = () => {
       }})
     }>
       <Tab.Screen name="Home" component={HomeScreen} options={{}} />
-      <Tab.Screen name="User" component={UserScreen} options={{}} />
-      <Tab.Screen name="Reserva" component={BuscarVuelosScreen} options={{}} />
-      <Tab.Screen name="Ticket" component={TicketScreen} options={{}} />
-      <Tab.Screen name="Settings" component={SettingsScreen} options={{}} />
-      <Tab.Screen name="Pokemon" component={PokemonInfo} options={{}} />
+      <Tab.Screen name="Pikachu" component={PokemonInfo} options={{}} />
+      <Tab.Screen name="Squirtle" component={SquirtleScreen} options={{}} />
+      <Tab.Screen name="Pokemon Aleatorio" component={PokemonFire} options={{}} />
+      <Tab.Screen name="Charizard" component={CharizardScreen} options={{}} />
     </Tab.Navigator>
   )
 }

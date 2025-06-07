@@ -7,7 +7,7 @@ function PokemonInfo() {
 
   const buscarPokemon = async () => {
     try {
-      const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu}`);
+      const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
       if (!respuesta.ok) throw new Error('Pokémon no encontrado');
       const datos = await respuesta.json();
       setPokemon({
