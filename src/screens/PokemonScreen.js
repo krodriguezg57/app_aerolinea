@@ -7,7 +7,7 @@ function PokemonInfo() {
 
   const buscarPokemon = async () => {
     try {
-      const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre.toLowerCase()}`);
+      const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/pikachu}`);
       if (!respuesta.ok) throw new Error('Pokémon no encontrado');
       const datos = await respuesta.json();
       setPokemon({
@@ -28,13 +28,7 @@ function PokemonInfo() {
   return (
     <div className="p-4 max-w-md mx-auto">
       <h1 className="text-xl font-bold mb-2">Buscar Pokémon</h1>
-      <input
-        type="text"
-        value={nombre}
-        onChange={e => setNombre(e.target.value)}
-        placeholder="Ej. pikachu"
-        className="border px-2 py-1 mr-2"
-      />
+
       <button onClick={buscarPokemon} className="bg-blue-500 text-white px-4 py-1 rounded">
         Buscar
       </button>
