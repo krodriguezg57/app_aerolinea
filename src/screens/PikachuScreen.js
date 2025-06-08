@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function PokemonInfo() {
-  const [nombre, setNombre] = useState('');
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState('');
 
-  const buscarPokemon = async () => {
+  const fetchPokemon = async () => {
     try {
       const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
       if (!respuesta.ok) throw new Error('Pokémon no encontrado');
@@ -25,13 +24,14 @@ function PokemonInfo() {
     }
   };
 
+  // Llamada a la API cuando el componente se monta
+  useEffect(() => {
+    fetchPokemon();
+  }, []);
+
   return (
     <div className="p-4 max-w-md mx-auto">
-      <h1 className="text-xl font-bold mb-2">Buscar Pokémon</h1>
-
-      <button onClick={buscarPokemon} className="bg-blue-500 text-white px-4 py-1 rounded">
-        Buscar
-      </button>
+      <h1 className="text-xl font-bold mb-2">Información de Pikachu</h1>
 
       {error && <p className="text-red-500 mt-4">{error}</p>}
 
